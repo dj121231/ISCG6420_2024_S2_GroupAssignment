@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Parakai Springs</title>
+    <title>Parakai Booking Reservation</title>
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
@@ -20,18 +20,125 @@
 
     <!-- 메인 콘텐츠 -->
     <main>
-      <h1>Parakai Springs</h1>
-      <!-- Part 1 Content -->
-      <section id="part1" class="content-section">
-        <h2>Part 1 Content</h2>
-        <p>이것은 Part 1의 내용입니다.</p>
-      </section>
+      <h1>Parakai Booking Reservation</h1>
 
-      <!-- Part 2 Content -->
-      <section id="part2" class="content-section" style="display: none">
-        <h2>Part 2 Content</h2>
-        <p>이것은 Part 2의 내용입니다.</p>
-      </section>
+      <!-- 상단 패널 -->
+      <div class="top-panel">
+        <label for="checkin">Check in</label>
+        <input type="date" id="checkin" name="checkin" required />
+
+        <label for="checkout">Check out</label>
+        <input type="date" id="checkout" name="checkout" required />
+
+        <label for="adults">Adults</label>
+        <input type="number" id="adults" name="adults" min="1" required />
+
+        <label for="children">Children</label>
+        <input type="number" id="children" name="children" min="0" required />
+
+        <button type="button" id="search">Search</button>
+      </div>
+
+      <!-- 메인 레이아웃 -->
+      <div class="container">
+        <!-- 왼쪽 상단: 예약 가능한 구역 -->
+        <section class="left-top-panel">
+          <h2>Booking available detail</h2>
+          <ul class="available-list">
+            <!-- 선택된 구역 정보 표시 -->
+          </ul>
+        </section>
+
+        <!-- 왼쪽 하단: 예약 세부 정보 -->
+        <section class="left-bottom-panel">
+          <h3>Booking details</h3>
+          <div class="booking-info">
+            <p>
+              <strong>Selected Lodge:</strong>
+              <span id="selected-lodge">N/A</span>
+            </p>
+            <p>
+              <strong>Capacity:</strong>
+              <span id="capacity-adults">0</span> adults |
+              <span id="capacity-children">N/A</span>
+            </p>
+            <p>
+              <strong>Date:</strong> Check-in
+              <span id="selected-checkin">N/A</span> | Check-out
+              <span id="selected-checkout">N/A</span>
+            </p>
+            <p>
+              <strong>Price:</strong> <span id="price-per-night">$0</span> per
+              night | Total Price: <span id="total-price">$0</span>
+            </p>
+          </div>
+          <div class="buttons">
+            <button type="button" id="confirm">Confirm</button>
+            <button type="button" id="clear">Clear</button>
+          </div>
+        </section>
+
+        <!-- 오른쪽: 지도 -->
+        <section class="right-panel" id="map">
+          <h2>Map</h2>
+          <div class="map-area">
+            <!-- 지도 이미지 추가 -->
+            <img
+              src="images/map.png"
+              alt="Parakai Springs Map"
+              style="width: 100%; height: auto"
+            />
+            <div
+              class="zone-btn zone1"
+              data-zone="Small Area 1"
+              data-capacity-total="5"
+              data-price="100"
+            >
+              1
+            </div>
+            <div
+              class="zone-btn zone2"
+              data-zone="Small Area 2"
+              data-capacity-total="5"
+              data-price="100"
+            >
+              2
+            </div>
+            <div
+              class="zone-btn zone3"
+              data-zone="Medium Area 1"
+              data-capacity-total="10"
+              data-price="150"
+            >
+              3
+            </div>
+            <div
+              class="zone-btn zone4"
+              data-zone="Medium Area 2"
+              data-capacity-total="10"
+              data-price="150"
+            >
+              4
+            </div>
+            <div
+              class="zone-btn zone5"
+              data-zone="Large Area 1"
+              data-capacity-total="20"
+              data-price="200"
+            >
+              5
+            </div>
+            <div
+              class="zone-btn zone6"
+              data-zone="Large Area 2"
+              data-capacity-total="20"
+              data-price="200"
+            >
+              6
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
 
     <!-- 푸터 -->

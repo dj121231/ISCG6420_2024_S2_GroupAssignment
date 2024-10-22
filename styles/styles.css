@@ -54,6 +54,154 @@ main h2 {
   font-size: 24px;
 }
 
+/* 예약 시스템 레이아웃 스타일 */
+
+/* 컨테이너: 그리드 레이아웃 */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* 왼쪽: 1단, 오른쪽: 2단 */
+  grid-template-rows: 1fr 1fr; /* 상단과 하단 */
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+/* 상단 패널 스타일 */
+.top-panel {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.top-panel label {
+  margin-right: 10px;
+}
+
+.top-panel input {
+  padding: 8px;
+  margin-right: 10px;
+}
+
+/* 왼쪽 상단: 예약 가능한 구역 스타일 */
+.left-top-panel {
+  grid-column: 1 / 2; /* 왼쪽 첫 번째 열 */
+  grid-row: 1 / 2; /* 첫 번째 줄 */
+  background-color: #f0f0f0;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+/* 왼쪽 하단: 예약 세부 정보 스타일 */
+.left-bottom-panel {
+  grid-column: 1 / 2; /* 왼쪽 첫 번째 열 */
+  grid-row: 2 / 3; /* 두 번째 줄 */
+  background-color: #fafafa;
+  padding: 20px;
+  border-top: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 오른쪽: 지도 스타일 */
+.right-panel {
+  grid-column: 2 / 3; /* 두 번째 열 */
+  grid-row: 1 / 3; /* 두 줄 모두 차지 */
+  background-color: #ddd;
+  height: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+/* 지도 영역 */
+.map-area {
+  position: relative; /* 구역 버튼의 부모 요소로 상대 위치 */
+  width: 100%; /* 지도의 크기를 반응형으로 설정 */
+  max-width: 1000px; /* 원하는 최대 크기를 설정 */
+  height: auto;
+}
+
+#map {
+  width: 100%; /* 지도를 반응형으로 만듭니다 */
+  height: auto;
+}
+
+/* 구역 버튼 스타일 */
+.zone-btn {
+  position: absolute; /* 지도 위에 배치되도록 */
+  background-color: rgba(0, 0, 255, 0.4); /* 투명도 40% */
+  color: white;
+  border: 2px solid black;
+  cursor: pointer;
+  width: 10%; /* 지도 너비의 10% */
+  height: 13%; /* 지도 너비의 10% */
+  display: flex;
+  justify-content: center; /* 글씨를 가운데 정렬 */
+  align-items: center;
+  font-size: 1.5vw; /* 글씨 크기를 반응형으로 설정 */
+  text-align: center;
+  text-shadow: 2px 2px 4px black;
+}
+
+/* 구역 위치 (퍼센트 단위) */
+.zone1 {
+  top: 65%;
+  left: 13%;
+}
+
+.zone2 {
+  top: 45%;
+  left: 5%;
+}
+
+.zone3 {
+  top: 17%;
+  left: 35%;
+}
+
+.zone4 {
+  top: 10%;
+  left: 53%;
+}
+
+.zone5 {
+  top: 30%;
+  left: 65%;
+}
+
+.zone6 {
+  top: 45%;
+  left: 70%;
+}
+
+/* 예약 세부 정보 내용 스타일 */
+.booking-info {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* 버튼 스타일 */
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #388e3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2e7d32;
+}
+
 /* 푸터 스타일 */
 footer {
   background-color: #333;
