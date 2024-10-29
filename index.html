@@ -7,14 +7,17 @@
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
+    <!-- Tooltip 요소 추가 -->
+    <div id="tooltip" class="tooltip" style="display: none"></div>
+
     <!-- 내비게이션 바 -->
     <nav>
       <ul>
         <li><a href="#">Video Game</a></li>
         <li><a href="#">Part 1 wireframe</a></li>
-        <li><a href="#">Part 1 data design</a></li>
+        <li><a href="#">part 1 data design</a></li>
         <li><a href="#">Part 2 wireframe</a></li>
-        <li><a href="#">Part 2 storyboard</a></li>
+        <li><a href="#">part 2 storyboard </a></li>
       </ul>
     </nav>
 
@@ -24,10 +27,10 @@
 
       <!-- 상단 패널 -->
       <div class="top-panel">
-        <label for="checkin">Check in</label>
+        <label for="checkin">Check-in</label>
         <input type="date" id="checkin" name="checkin" required />
 
-        <label for="checkout">Check out</label>
+        <label for="checkout">Check-out</label>
         <input type="date" id="checkout" name="checkout" required />
 
         <label for="adults">Adults</label>
@@ -41,26 +44,18 @@
 
       <!-- 메인 레이아웃 -->
       <div class="container">
-        <!-- 왼쪽 상단: 예약 가능한 구역 -->
-        <section class="left-top-panel">
-          <h2>Booking available detail</h2>
-          <ul class="available-list">
-            <!-- 선택된 구역 정보 표시 -->
-          </ul>
-        </section>
-
         <!-- 왼쪽 하단: 예약 세부 정보 -->
         <section class="left-bottom-panel">
-          <h3>Booking details</h3>
-          <div class="booking-info">
+          <h3 id="booking-title">Booking details</h3>
+          <div class="booking-info" id="booking-details">
             <p>
               <strong>Selected Lodge:</strong>
               <span id="selected-lodge">N/A</span>
             </p>
             <p>
               <strong>Capacity:</strong>
-              <span id="capacity-adults">0</span> adults |
-              <span id="capacity-children">N/A</span>
+              <span id="capacity-adults">adults:</span> |
+              <span id="capacity-children">children:</span>
             </p>
             <p>
               <strong>Date:</strong> Check-in
@@ -72,6 +67,32 @@
               night | Total Price: <span id="total-price">$0</span>
             </p>
           </div>
+
+          <div id="booking-summary" style="display: none">
+            <h4>Booking Summary</h4>
+            <p>
+              <strong>Selected Zone:</strong> <span id="summary-zone"></span>
+            </p>
+            <p>
+              <strong>Capacity:</strong> <span id="summary-capacity"></span>
+            </p>
+            <p>
+              <strong>Check-in Date:</strong> <span id="summary-checkin"></span>
+            </p>
+            <p>
+              <strong>Check-out Date:</strong>
+              <span id="summary-checkout"></span>
+            </p>
+            <p>
+              <strong>Price per Night:</strong>
+              <span id="summary-price-per-night"></span>
+            </p>
+            <p>
+              <strong>Total Price:</strong>
+              <span id="summary-total-price"></span>
+            </p>
+          </div>
+
           <div class="buttons">
             <button type="button" id="confirm">Confirm</button>
             <button type="button" id="clear">Clear</button>
@@ -82,60 +103,23 @@
         <section class="right-panel" id="map">
           <h2>Map</h2>
           <div class="map-area">
-            <!-- 지도 이미지 추가 -->
             <img
               src="images/map.png"
               alt="Parakai Springs Map"
               style="width: 100%; height: auto"
             />
-            <div
-              class="zone-btn zone1"
-              data-zone="Small Area 1"
-              data-capacity-total="5"
-              data-price="100"
-            >
-              1
-            </div>
-            <div
-              class="zone-btn zone2"
-              data-zone="Small Area 2"
-              data-capacity-total="5"
-              data-price="100"
-            >
-              2
-            </div>
-            <div
-              class="zone-btn zone3"
-              data-zone="Medium Area 1"
-              data-capacity-total="10"
-              data-price="150"
-            >
-              3
-            </div>
-            <div
-              class="zone-btn zone4"
-              data-zone="Medium Area 2"
-              data-capacity-total="10"
-              data-price="150"
-            >
-              4
-            </div>
-            <div
-              class="zone-btn zone5"
-              data-zone="Large Area 1"
-              data-capacity-total="20"
-              data-price="200"
-            >
-              5
-            </div>
-            <div
-              class="zone-btn zone6"
-              data-zone="Large Area 2"
-              data-capacity-total="20"
-              data-price="200"
-            >
-              6
-            </div>
+
+            <!-- 각 구역 버튼 -->
+            <div class="zone-btn zone1" data-zone="1">Zone 1</div>
+            <div class="zone-btn zone2" data-zone="2">Zone 2</div>
+            <div class="zone-btn zone3" data-zone="3">Zone 3</div>
+            <div class="zone-btn zone4" data-zone="4">Zone 4</div>
+            <div class="zone-btn zone5" data-zone="5">Zone 5</div>
+            <div class="zone-btn zone6" data-zone="6">Zone 6</div>
+            <div class="zone-btn zone7" data-zone="7">Zone 7</div>
+            <div class="zone-btn zone8" data-zone="8">Zone 8</div>
+            <div class="zone-btn zone9" data-zone="9">Zone 9</div>
+            <div class="zone-btn zone10" data-zone="10">Zone 10</div>
           </div>
         </section>
       </div>

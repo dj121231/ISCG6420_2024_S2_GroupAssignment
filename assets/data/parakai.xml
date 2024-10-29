@@ -3,36 +3,70 @@
     <name>Small Area 1</name>
     <capacity-total>5</capacity-total>
     <price-per-night>100</price-per-night>
-    <available>true</available>
+    <available>false</available>
+    <image-path>images/small_area1.jpg</image-path>
   </zone>
   <zone id="2">
     <name>Small Area 2</name>
     <capacity-total>5</capacity-total>
     <price-per-night>100</price-per-night>
-    <available>true</available>
+    <available>false</available>
+    <image-path>images/small_area2.jpg</image-path>
   </zone>
   <zone id="3">
+    <name>Small Area 3</name>
+    <capacity-total>5</capacity-total>
+    <price-per-night>100</price-per-night>
+    <available>true</available>
+    <image-path>images/small_area3.jpg</image-path>
+  </zone>
+  <zone id="4">
+    <name>Small Area 4</name>
+    <capacity-total>5</capacity-total>
+    <price-per-night>100</price-per-night>
+    <available>true</available>
+    <image-path>images/small_area4.jpg</image-path>
+  </zone>
+  <zone id="5">
+    <name>Small Area 5</name>
+    <capacity-total>5</capacity-total>
+    <price-per-night>100</price-per-night>
+    <available>true</available>
+    <image-path>images/small_area5.jpg</image-path>
+  </zone>
+  <zone id="6">
     <name>Medium Area 1</name>
     <capacity-total>10</capacity-total>
     <price-per-night>150</price-per-night>
-    <available>true</available>
+    <available>false</available>
+    <image-path>images/medium_area1.jpg</image-path>
   </zone>
-  <zone id="4">
+  <zone id="7">
     <name>Medium Area 2</name>
     <capacity-total>10</capacity-total>
     <price-per-night>150</price-per-night>
     <available>true</available>
+    <image-path>images/medium_area2.jpg</image-path>
   </zone>
-  <zone id="5">
+  <zone id="8">
     <name>Large Area 1</name>
     <capacity-total>20</capacity-total>
-    <price-per-night>200</price-per-night>
+    <price-per-night>250</price-per-night>
     <available>true</available>
+    <image-path>images/large_area1.jpg</image-path>
   </zone>
-  <zone id="6">
+  <zone id="9">
     <name>Large Area 2</name>
     <capacity-total>20</capacity-total>
-    <price-per-night>200</price-per-night>
+    <price-per-night>250</price-per-night>
     <available>true</available>
+    <image-path>images/large_area2.jpg</image-path>
+  </zone>
+  <zone id="10">
+    <name>Extra Large Area 1</name>
+    <capacity-total>50</capacity-total>
+    <price-per-night>400</price-per-night>
+    <available>true</available>
+    <image-path>images/extra_large_area1.jpg</image-path>
   </zone>
 </park>
