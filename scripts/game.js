@@ -179,9 +179,12 @@ function createDonut() {
 }
 
 // Create donuts
-for (let i = 0; i < 10; i++) {
+function spawnDonutsContinuously() {
   createDonut();
+  setTimeout(spawnDonutsContinuously, 100);
 }
+
+spawnDonutsContinuously();
 
 // Create a swimmer instance
 const swimmer = new Swimmer(200, canvas.height / 2, 5); // Start at (200, canvas middle) with speed 5
