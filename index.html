@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
-    <!-- Tooltip 요소 추가 -->
+    <!-- Tooltip element added -->
     <div id="tooltip" class="tooltip" style="display: none"></div>
 
-    <!-- 내비게이션 바 -->
+    <!-- Navigation bar -->
     <nav>
       <ul>
         <li><a href="#" id="videoGameBtn">Video Game</a></li>
@@ -33,11 +33,11 @@
       </ul>
     </nav>
 
-    <!-- 메인 콘텐츠 -->
+    <!-- Main content -->
     <main>
       <h1>Parakai Booking Reservation</h1>
 
-      <!-- 상단 패널 -->
+      <!-- Top panel -->
       <div class="top-panel">
         <label for="checkin">Check-in</label>
         <input type="date" id="checkin" name="checkin" required />
@@ -54,9 +54,9 @@
         <button type="button" id="search">Search</button>
       </div>
 
-      <!-- 메인 레이아웃 -->
+      <!-- Main layout -->
       <div class="container">
-        <!-- 왼쪽 하단: 예약 세부 정보 -->
+        <!-- Left-bottom: Booking details -->
         <section class="left-bottom-panel">
           <h3 id="booking-title">Booking details</h3>
           <div class="booking-info" id="booking-details">
@@ -111,7 +111,7 @@
           </div>
         </section>
 
-        <!-- 오른쪽: 지도 -->
+        <!-- Right: Map -->
         <section class="right-panel" id="map">
           <h2>Map</h2>
           <div class="map-area">
@@ -121,7 +121,7 @@
               style="width: 100%; height: auto"
             />
 
-            <!-- 각 구역 버튼 -->
+            <!-- Each zone button -->
             <div class="zone-btn zone1" data-zone="1">Zone 1</div>
             <div class="zone-btn zone2" data-zone="2">Zone 2</div>
             <div class="zone-btn zone3" data-zone="3">Zone 3</div>
@@ -141,12 +141,12 @@
       </div>
     </main>
 
-    <!-- 푸터 -->
+    <!-- Footer -->
     <footer>
       <p>&copy; 2024 Parakai Springs</p>
     </footer>
 
-    <!-- 외부 JavaScript 파일 연결 -->
+    <!-- External JavaScript file -->
     <script src="scripts/main.js"></script>
     <!-- JavaScript -->
     <script>

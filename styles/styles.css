@@ -1,4 +1,4 @@
-/* 기본 스타일 */
+/* Basic style */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -6,7 +6,7 @@ body {
   background-color: #e0e0e0;
 }
 
-/* 내비게이션 바 스타일 */
+/* Navigation bar style */
 nav {
   background-color: #2e7d32;
   padding: 10px;
@@ -36,7 +36,7 @@ nav ul li a:hover {
   background-color: #1b5e20;
 }
 
-/* 메인 콘텐츠 스타일 */
+/* Main content style */
 main {
   background-color: white;
   padding: 40px;
@@ -54,15 +54,15 @@ main h2 {
   font-size: 24px;
 }
 
-/* 예약 시스템 레이아웃 스타일 */
+/* Reservation system layout style */
 .container {
   display: grid;
-  grid-template-columns: 1fr 2fr; /* 왼쪽: 1단, 오른쪽: 2단 */
+  grid-template-columns: 1fr 2fr; /* Left: 1 column, Right: 2 columns */
   grid-gap: 20px;
   padding: 20px;
 }
 
-/* 상단 패널 스타일 */
+/* Top panel style */
 .top-panel {
   display: flex;
   justify-content: space-around;
@@ -79,7 +79,7 @@ main h2 {
   margin-right: 10px;
 }
 
-/* 왼쪽 하단: 예약 세부 정보 스타일 */
+/* Left bottom: booking details style */
 .left-bottom-panel {
   background-color: #fafafa;
   padding: 20px;
@@ -88,7 +88,7 @@ main h2 {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* 오른쪽: 지도 스타일 */
+/* Right side: map style */
 .right-panel {
   background-color: #ddd;
   height: 100%;
@@ -96,7 +96,7 @@ main h2 {
   border: 1px solid #ccc;
 }
 
-/* 지도 영역 */
+/* Map area */
 .map-area {
   position: relative;
   width: 100%;
@@ -109,7 +109,7 @@ main h2 {
   height: auto;
 }
 
-/* 구역 버튼 스타일 */
+/* Zone button style */
 .zone-btn {
   position: absolute;
   background-color: rgba(0, 0, 255, 0.4);
@@ -126,7 +126,7 @@ main h2 {
   text-shadow: 2px 2px 4px black;
 }
 
-/* 구역 위치 (퍼센트 단위로 설정) */
+/* Zone positions (set in percentages) */
 .zone1 {
   top: 40%;
   left: 85%;
@@ -168,7 +168,7 @@ main h2 {
   left: 13%;
 }
 
-/* Tooltip 스타일 */
+/* Tooltip style */
 .tooltip {
   position: absolute;
   padding: 8px;
@@ -177,22 +177,22 @@ main h2 {
   border-radius: 5px;
   font-size: 14px;
   z-index: 1000;
-  display: none; /* 툴팁 숨김 */
+  display: none; /* Hide tooltip */
   pointer-events: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* 예약 세부 정보 내용 스타일 */
+/* Booking details content style */
 .booking-info {
   background-color: #f9f9f9;
   padding: 15px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  width: 100%;
+  width: 90%;
   margin-bottom: 20px;
 }
 
-/* 버튼 스타일 */
+/* Button style */
 .buttons {
   display: flex;
   gap: 10px;
@@ -211,7 +211,7 @@ button:hover {
   background-color: #2e7d32;
 }
 
-/* 푸터 스타일 */
+/* Footer style */
 footer {
   background-color: #333;
   color: white;

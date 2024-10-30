@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 체크인, 체크아웃 날짜 기본값 설정
+  // Set default check-in and check-out dates
   const today = new Date();
   const tomorrow = new Date(today);
   tomorrow.setDate(today.getDate() + 1);
 
-  // 날짜를 'YYYY-MM-DD' 형식으로 변환하는 함수
+  // Function to format dates as 'YYYY-MM-DD'
   function formatDate(date) {
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, "0");
@@ -12,17 +12,17 @@ document.addEventListener("DOMContentLoaded", () => {
     return `${year}-${month}-${day}`;
   }
 
-  // 체크인과 체크아웃 날짜 기본값 설정
+  // Set default check-in and check-out date values
   const checkinInput = document.getElementById("checkin");
   const checkoutInput = document.getElementById("checkout");
   checkinInput.value = formatDate(today);
   checkoutInput.value = formatDate(tomorrow);
 
-  // 과거 날짜 선택을 제한
+  // Restrict selection of past dates
   checkinInput.setAttribute("min", formatDate(today));
   checkoutInput.setAttribute("min", formatDate(tomorrow));
 
-  // 체크인 날짜 변경 시 체크아웃 최소 날짜 업데이트
+  // Update minimum checkout date when check-in date changes
   checkinInput.addEventListener("change", () => {
     const checkinDate = new Date(checkinInput.value);
     const nextDay = new Date(checkinDate);
@@ -32,7 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
       checkoutInput.value = formatDate(nextDay);
     }
   });
-  // XML 파일 경로 지정 및 데이터 로드
+
+  // Specify the XML file path and load data
   fetch("assets/data/parakai.xml")
     .then((response) => response.text())
     .then((xmlText) => {
@@ -66,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-  // 예약 가능 여부에 따른 색상 설정 함수
+  // Function to set color based on availability
   function updateZoneAvailability(zoneElement, available) {
     zoneElement.style.backgroundColor =
       available === "false" ? "rgba(255, 0, 0, 0.7)" : "rgba(0, 255, 0, 0.7)";
@@ -75,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const tooltip = document.getElementById("tooltip");
   const zoneElements = document.querySelectorAll(".zone-btn");
 
-  // Tooltip 표시 설정
+  // Set up tooltip display
   zoneElements.forEach((zone) => {
     zone.addEventListener("mouseenter", (event) => {
       const selectedLodge = zone.getAttribute("data-zone") || "N/A";
@@ -107,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Search 버튼 클릭 시 예약 가능 여부 확인
+  // Check availability when Search button is clicked
   document.getElementById("search").addEventListener("click", () => {
     const adults = parseInt(document.getElementById("adults").value, 10);
     const children = parseInt(document.getElementById("children").value, 10);
@@ -133,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 예약 가능한 구역 클릭 시 Booking details 업데이트
+  // Update booking details when an available zone is clicked
   zoneElements.forEach((zone) => {
     zone.addEventListener("click", () => {
       const available = zone.getAttribute("data-available") === "true";
@@ -172,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 총 가격 계산 함수
+  // Function to calculate total price based on check-in and check-out dates
   function calculateTotalPrice(checkin, checkout, pricePerNight) {
     const checkinDate = new Date(checkin);
     const checkoutDate = new Date(checkout);
@@ -181,8 +182,18 @@ document.addEventListener("DOMContentLoaded", () => {
     return numberOfDays * pricePerNight;
   }
 
-  // Confirm 버튼 클릭 시 예약 요약 표시
+  // Show booking summary when Confirm button is clicked
   document.getElementById("confirm").addEventListener("click", () => {
+    const adults = document.getElementById("adults").value;
+    const children = document.getElementById("children").value;
+
+    // Check if the number of people has been entered
+    if (!adults || !children) {
+      alert(
+        "Please enter the number of adults and children before confirming."
+      );
+      return;
+    }
     const selectedLodge = document.getElementById("selected-lodge").textContent;
     const capacityTotal =
       document.getElementById("capacity-adults").textContent +
@@ -211,13 +222,14 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("booking-details").style.display = "none";
     document.getElementById("booking-title").style.display = "none";
     document.getElementById("booking-summary").style.display = "block";
-    // Confirm 버튼 클릭 후 Clear 버튼을 숨김
+    // Hide the Clear button after Confirm is clicked
     document.getElementById("clear").style.display = "none";
     document.getElementById("confirm").style.display = "none";
   });
-  // Clear 버튼 클릭 시 예약 정보 초기화
+
+  // Reset booking information when Clear button is clicked
   document.getElementById("clear").addEventListener("click", () => {
-    // Booking details 초기화
+    // Reset booking details
     document.getElementById("selected-lodge").textContent = "N/A";
     document.getElementById("capacity-adults").textContent = "Adults: ";
     document.getElementById("capacity-children").textContent = "| Children: ";
@@ -226,6 +238,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("price-per-night").textContent = "$0";
     document.getElementById("total-price").textContent = "$0";
   });
-  // Confirm 버튼을 누르기 전까지 Clear 버튼을 다시 활성화
+  // Display the Clear button again until Confirm is clicked
   document.getElementById("clear").style.display = "inline-block";
 });
